@@ -6,12 +6,10 @@ $model = new FourWallsModel('data.json');
 
 $controller = new SearchController($model);
 
-$filters = array(
-	'for' => 'sale',
-	'm2From' => 30,
-	'm2To' => 50,
-	'priceFrom' => 33000,
-	'priceTo' => 100000,
-);
+// napraviti filter pretrage po sledećim kriterijumima:
+// 1. da je za prodaju (hint for = sale)
+// 2. da je cena između 33000 i 100000
+// 3. da je površina između 30 i 50
+$filters = [];
 
 $controller->search($filters);

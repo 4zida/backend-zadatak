@@ -4,47 +4,14 @@ class FourWallsModel
 	{
 	private $data;
 
-	public function __construct($dataFilePath)
-		{
-		$this->data = json_decode(file_get_contents($dataFilePath), true);
-		}
+	//Prvi korak u modelu je da se napravi konstruktor koji će da učita podatke iz json fajla i smesti ih u $data
 
 	public function search($filters)
 		{
 		$results = [];
-		foreach ($this->data as $ad)
-			{
-			$match = true;
 
-			if (isset($filters['for']) && $ad['for'] !== $filters['for'])
-				{
-				$match = false;
-				}
-			if (isset($filters['m2From']) && $ad['m2'] < $filters['m2From'])
-				{
-				$match = false;
-				}
-
-			if (isset($filters['m2To']) && $ad['m2'] > $filters['m2To'])
-				{
-				$match = false;
-				}
-
-			if (isset($filters['priceFrom']) && $ad['price'] < $filters['priceFrom'])
-				{
-				$match = false;
-				}
-
-			if (isset($filters['priceTo']) && $ad['price'] > $filters['priceTo'])
-				{
-				$match = false;
-				}
-
-			if ($match)
-				{
-				$results[] = $ad;
-				}
-			}
+		//implementirati pretragu
+		// u index.php se nalazi primer poziva ove funkcije, potrebno filtrirati $data i vratiti rezultate
 
 		return $results;
 		}
