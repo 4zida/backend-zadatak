@@ -12,6 +12,6 @@ class SearchController
 	public function search($filters)
 		{
 		//Pozvati metodu search iz modela i vratiti rezultate
-		//Dekorisati rezultate i vratiti ih u view (nije obavezno), može i samo dump rezultata
+		//Dekorisati rezultate i vratiti ih u json formatu
 		}
 	}
